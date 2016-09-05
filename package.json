@@ -1,0 +1,27 @@
+{
+  "name": "pceo_population",
+  "version": "0.0.5",
+  "description": "PCEO floating Population Project.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cottage": "^2.0.0",
+    "express": "^4.13.3",
+    "koa": "^1.1.2",
+    "koa-bodyparser": "^2.0.1",
+    "koa-ejs": "^3.0.0",
+    "koa-render": "^0.2.1",
+    "koa-static": "^2.0.0",
+    "methods": "^1.1.2",
+    "moment": "^2.11.1",
+    "mongoose": "^4.3.6",
+    "morgan": "^1.6.1",
+    "winston": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node --harmony index.js"
+  },
+  "author": "JuWoong Bae",
+  "license": "MIT"
+}

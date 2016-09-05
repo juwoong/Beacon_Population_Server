@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>a Float : float population</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <script>// <![CDATA[
+        //
+        function startClock() { // internal clock//
+            var today=new Date();
+            var y=today.getFullYear();
+            var M=today.getMonth();
+            var d=today.getDate();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            M = checkDate(M);
+            M = checkTime(M);
+            var time=y+"-"+M+"-"+d+" "+h+":"+m+":"+s;
+            document.getElementById('Display_clock').innerHTML = time;
+            var t = setTimeout(function(){startClock()},500);
+        }
+
+        function checkTime(i) {
+            if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+
+        function checkDate(i) {
+            i = i+1 ;  // to adjust real month
+            return i;
+        }
+        // ]]></script>
+</head>
+<body onload="startClock()">
+
+<div class="container-top">
+            <div class="naiyou-top" style="margin-left:5px;margin-right:10px;" width=150px><a class="header" href="/">a Float</a></div>
+</div>
+
+<div class="container main">
+    <div class="row" style="padding-top: 20px; height: 100%;">
+        <div class="naiyou" style="font-size:11pt;">
+            <h4 align="center">Welcome to a Float</h4>
+            <!--<img src="images/map.png"/>-->
+            <h1 id="Display_clock" align="center"></h1>
+            <table class="DB" align="center">
+                <tr style="font-size:20pt;">
+                    <td>기록 장소</td><td>UUID</td><td>기록 시간</td><td>사용자</td>
+                </tr>
+                <% for(var i=0; i<list.length; i++) {%>
+                <tr>
+                    <td><%=locate[list[i].uuid]%></td><td><%=list[i].uuid%></td><td><%=list[i].timestamp%></td><td>jiyong</td>
+                </tr>
+                <% }%>
+            </table>
+            
+        </div>
+    </div>
+</div>
+
+<div class="footer container" style="padding:5px 0;">
+    <div class="naiyou">
+        2016 a Float, All rights reserved.
+    </div>
+</div>
+</body>
+</html>
